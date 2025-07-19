@@ -92,13 +92,14 @@ function App() {
         const chunk = decoder.decode(value);
         aiResponse += chunk;
 
-        setMessages(prev => 
-          prev.map(msg => 
-            msg.id === aiMessageId 
+        // Refactored: update messages using a function declared outside the loop
+        setMessages(prevMessages => {
+          return prevMessages.map(msg =>
+            msg.id === aiMessageId
               ? { ...msg, content: aiResponse }
               : msg
-          )
-        );
+          );
+        });
       }
     } catch (error) {
       console.error('Error sending message:', error);
