@@ -4,6 +4,8 @@
 </p>
 
 
+Challenge Application URL: https://ai-challenge-liard.vercel.app/
+
 ## <h1 align="center" id="heading"> 👋 Welcome to the AI Engineer Challenge</h1>
 
 ## 🤖 Your First Vibe Coding LLM Application
