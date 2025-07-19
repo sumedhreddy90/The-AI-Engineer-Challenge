@@ -90,12 +90,11 @@ function App() {
         if (done) break;
 
         const chunk = decoder.decode(value);
-        currentResponse += chunk;
 
         setMessages(prevMessages =>
           prevMessages.map(msg =>
             msg.id === aiMessageId
-              ? { ...msg, content: currentResponse }
+              ? { ...msg, content: (msg.content || '') + chunk }
               : msg
           )
         );
