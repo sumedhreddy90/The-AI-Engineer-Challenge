@@ -140,7 +140,7 @@ function App() {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <h1 className="text-xl font-bold text-gray-900">AI Chat</h1>
-              <span className="text-sm text-gray-500">Powered by GPT-4.1-nano</span>
+              <span className="text-sm text-gray-500">Powered by Sumedh Koppula via OpenAI GPT-4.1-nano</span>
             </div>
             
             <div className="flex items-center space-x-2">
