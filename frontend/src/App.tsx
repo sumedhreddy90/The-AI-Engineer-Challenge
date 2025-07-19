@@ -73,7 +73,7 @@ function App() {
       const reader = stream.getReader();
       const decoder = new TextDecoder();
       
-      let aiResponse = '';
+      let currentResponse = '';
       const aiMessageId = (Date.now() + 1).toString();
       
       const aiMessage: ChatMessageType = {
@@ -90,16 +90,15 @@ function App() {
         if (done) break;
 
         const chunk = decoder.decode(value);
-        aiResponse += chunk;
+        currentResponse += chunk;
 
-        // Refactored: update messages using a function declared outside the loop
-        setMessages(prevMessages => {
-          return prevMessages.map(msg =>
+        setMessages(prevMessages =>
+          prevMessages.map(msg =>
             msg.id === aiMessageId
-              ? { ...msg, content: aiResponse }
+              ? { ...msg, content: currentResponse }
               : msg
-          );
-        });
+          )
+        );
       }
     } catch (error) {
       console.error('Error sending message:', error);
